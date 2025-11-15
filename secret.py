@@ -8,6 +8,7 @@ from datetime import datetime
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 import base64
+import webbrowser
 
 NOTES_FOLDER = os.path.join(os.path.expanduser('~'), 'Desktop', 'MySecretNotes')
 PASSWORD = "123"
@@ -388,30 +389,44 @@ def system_analysis():
         system_analysis()
 
 def about_author():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    print("┌" + "─" * 50 + "┐")
-    hacker_print("│                 ABOUT AUTHOR                │")
-    print("├" + "─" * 50 + "┤")
-    hacker_print("│                                              │")
-    hacker_print("│           ██████╗  ██████╗  ██████╗ ██╗  ██╗│")
-    hacker_print("│           ██╔══██╗██╔═══██╗██╔════╝ ██║  ██║│")
-    hacker_print("│           ██████╔╝██║   ██║██║  ███╗███████║│")
-    hacker_print("│           ██╔══██╗██║   ██║██║   ██║██╔══██║│")
-    hacker_print("│           ██████╔╝╚██████╔╝╚██████╔╝██║  ██║│")
-    hacker_print("│           ╚═════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝│")
-    hacker_print("│                                              │")
-    print("├" + "─" * 50 + "┤")
-    hacker_print("│           SECRET NOTES SYSTEM v2.0          │")
-    hacker_print("│           Created by: yourwebbu1lder        │")
-    print("├" + "─" * 50 + "┤")
-    hacker_print("│ GitHub: github.com/yourwebbu1lder           │")
-    hacker_print("│ Instagram: @yourwebbu1lder                  │")
-    hacker_print("│ Portfolio: yourwebbu1lder                   │")
-    print("├" + "─" * 50 + "┤")
-    hacker_print("│ [1] Return to Main Menu                     │")
-    print("└" + "─" * 50 + "┘")
-    
-    input("\nPress Enter to continue...")
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("┌" + "─" * 50 + "┐")
+        hacker_print("│                 ABOUT AUTHOR                │")
+        print("├" + "─" * 50 + "┤")
+        hacker_print("│                                              │")
+        hacker_print("│           ██████╗  ██████╗  ██████╗ ██╗  ██╗│")
+        hacker_print("│           ██╔══██╗██╔═══██╗██╔════╝ ██║  ██║│")
+        hacker_print("│           ██████╔╝██║   ██║██║  ███╗███████║│")
+        hacker_print("│           ██╔══██╗██║   ██║██║   ██║██╔══██║│")
+        hacker_print("│           ██████╔╝╚██████╔╝╚██████╔╝██║  ██║│")
+        hacker_print("│           ╚═════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝│")
+        hacker_print("│                                              │")
+        print("├" + "─" * 50 + "┤")
+        hacker_print("│           SECRET NOTES SYSTEM v2.0          │")
+        hacker_print("│           Created by: yourwebbu1lder        │")
+        print("├" + "─" * 50 + "┤")
+        hacker_print("│ [1] GitHub: github.com/yourwebbu1lder       │")
+        hacker_print("│ [2] Instagram: @yourwebbu1lder              │")
+        print("├" + "─" * 50 + "┤")
+        hacker_print("│ [3] Return to Main Menu                     │")
+        print("└" + "─" * 50 + "┘")
+        
+        choice = input("\n[INPUT] Select option: ").strip()
+        
+        if choice == '1':
+            hacker_print("[SYSTEM] Opening GitHub profile...")
+            webbrowser.open("https://github.com/yourwebbu1lder")
+            time.sleep(1)
+        elif choice == '2':
+            hacker_print("[SYSTEM] Opening Instagram profile...")
+            webbrowser.open("https://instagram.com/yourwebbu1lder")
+            time.sleep(1)
+        elif choice == '3':
+            break
+        else:
+            hacker_print("[ERROR] Invalid option!")
+            input("Press Enter to continue...")
 
 def main():
     setup()
